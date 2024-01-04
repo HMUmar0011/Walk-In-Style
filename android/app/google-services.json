@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "179478125780",
+    "project_id": "e-commerce-app-e4608",
+    "storage_bucket": "e-commerce-app-e4608.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179478125780:android:495764ac7705a28716ef41",
+        "android_client_info": {
+          "package_name": "com.example.walkinstyleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9KCFvkhlW1MMviz_CKv30gNwGGpZ6_IM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
