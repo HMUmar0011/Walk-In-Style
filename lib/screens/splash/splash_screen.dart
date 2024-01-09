@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walkinstyleapp/routes/routes.dart';
+import 'package:walkinstyleapp/utilities/app_assets.dart';
+import 'package:walkinstyleapp/utilities/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,16 +14,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    screenTimer();
+     screenTimer();
+   
   }
   @override
   Widget build(BuildContext context) {
-    return Container();
+    screenSize=MediaQuery.sizeOf(context);
+    return Container(
+      color: Colors.black,
+      child: Image.asset(AppAssets.splashScreenImage,
+      fit: BoxFit.fill,),
+    );
   }
     ///This is the method which will wait for 2 seconds to move on next page
   screenTimer() async {
-    await Future.delayed(const Duration(seconds: 3), () {
-      Navigator.popAndPushNamed(context, Routes.login);
+    await Future.delayed(const Duration(seconds: 1), () {
+      Navigator.popAndPushNamed(context, Routes.onBoardScreen);
     });
   }
 
