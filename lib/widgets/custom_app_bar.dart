@@ -1,43 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:walkinstyleapp/utilities/app_colors.dart';
 import 'package:walkinstyleapp/utilities/constants.dart';
 
-Widget customAppBar(Icon backBtnIcon,){
-
-  return AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key,this.leadingIcon=const Icon(Icons.arrow_back_ios),this.leadingCallbackAction,this.centerWidget,this.trailingIcon,this.trailingCallbackAction});
+final Icon? leadingIcon;  
+final Function()? leadingCallbackAction;
+final Icon? trailingIcon;  
+final Function()? trailingCallbackAction;
+final Widget? centerWidget;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ClipOval(
           child: InkWell(
-
+            onTap: leadingCallbackAction,
             child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(width: 1,style: BorderStyle.solid),
-              color:AppColors.white,
+              width: screenSize.width * 0.11,
+              height: screenSize.height * 0.05,
+              color: Colors.white,
+              child:  Center(
+                child: leadingIcon,
+              ),
             ),
-            child: const Icon(Icons.arrow_back_ios,color: AppColors.iconColor,),),
-            
           ),
         ),
-        centerTitle: true,
-        title: Text('My Cart',style: TextStyle(color: AppColors.largeTextColor),),
-        actions: [
-          Padding(
-          padding: const EdgeInsets.all(8.0),
+        centerWidget!=null?
+        Expanded(child: SizedBox(
+           width: screenSize.width * 0.6,
+              height: screenSize.height * 0.05,
+          child: FittedBox(child:centerWidget ))):const Text(''),
+        trailingIcon!=null?
+        ClipOval(
           child: InkWell(
-          
+            onTap: trailingCallbackAction,
             child: Container(
-             width: screenSize.width*0.1 ,
-             height: screenSize.height*0.35,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(width: 1,style: BorderStyle.solid),
-              color:AppColors.white,
+              width: screenSize.width * 0.11,
+              height: screenSize.height * 0.05,
+              color: Colors.white,
+              child:Center(
+                child:trailingIcon,
+              ),
             ),
-            child: const Icon(Icons.shopping_bag,color: AppColors.iconColor,),),
-            
           ),
-                ),
-        ],
-      );
+        ):const Text(''),
+      ],
+    );
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walkinstyleapp/routes/routes.dart';
 import 'package:walkinstyleapp/screens/splash/splash_screen.dart';
+import 'package:walkinstyleapp/utilities/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   
@@ -11,10 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: CustomThemeData.myCustomTheme(),
       home:const SplashScreen(),
       onGenerateRoute: RouteGenerator.getRoute,
     );

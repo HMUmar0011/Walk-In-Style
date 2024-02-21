@@ -12,9 +12,10 @@ abstract class AppColors {
  static const Color white = Colors.white;
  static Color grey = Colors.grey;
   // Button Colors
- static const Color btnColor = const Color.fromARGB(255, 51, 160, 255);
+ static const Color btnColor =  Color.fromARGB(255, 51, 160, 255);
 
  // Text Colors
+
  static Color largeTextColor = const Color.fromARGB(255, 56, 68, 78);
  static Color titleTextColors = const Color.fromARGB(255, 109, 123, 129);
  static Color backgroundAppColor = const Color.fromARGB(255, 248, 249, 250);
@@ -36,7 +37,7 @@ abstract class AppColors {
  static Color placeholderColor = const Color.fromARGB(255, 180, 180, 180);
 
   // Icon Colors
- static const Color iconColor = const Color.fromARGB(255, 85, 93, 96);
+ static const Color iconColor =  Color.fromARGB(255, 85, 93, 96);
 
   // Success and Warning Colors
   static Color successColor = const Color.fromARGB(255, 0, 200, 83);
